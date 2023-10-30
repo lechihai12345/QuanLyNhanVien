@@ -1,0 +1,52 @@
+﻿body {
+}
+td {
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+.btt a {
+    font-size: 20px;
+    color: blue;
+    font-weight: bold;
+}
+
+.aa {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.aaa {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.col-md-6 {
+    font-weight: bold;
+    font-size: 20px;
+    color: blue;
+}
+
+.card {
+    background-color: lightblue;
+}
+
+.fa-pen-to-square {
+    color: black
+}
+
+.fa-circle-info {
+    color: black
+}
+
+.fa-trash {
+    color: black
+}
+
+.fa-folder-plus {
+    color: black
+}

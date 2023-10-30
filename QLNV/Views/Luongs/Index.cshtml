@@ -1,0 +1,136 @@
+﻿@model IEnumerable<QLNV.Model.Luong>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    td {
+        text-align: center;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .btt a {
+        font-size: 20px;
+        color: blue;
+        font-weight: bold;
+    }
+
+    .aa {
+        color: blue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .aaa {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .col-md-6 {
+        font-weight: bold;
+        font-size: 20px;
+        color: blue;
+    }
+    .card {
+        background-color: lightblue;
+    }
+    .fa-pen-to-square {
+        color: black
+    }
+
+    .fa-circle-info {
+        color: black
+    }
+
+    .fa-trash {
+        color: black
+    }
+
+    .fa-folder-plus {
+        color: black
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content my-2">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <div class=" row">
+                    <div class=" col-md-6">
+                        <strong>QUẢN LÝ SỐ LƯƠNG</strong>
+                    </div>
+                    <div class=" col-md-6 text-right">
+                        <button type="button" class="btt btn-success"><i class="fa-solid fa-folder-plus"></i>  @Html.ActionLink("TẠO SỐ LƯƠNG", "Create")</button>
+
+                    </div>
+                </div>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body">
+
+                @if (TempData["AltertMessage"] != null)
+                {
+                    <div class="alert alert-success">
+                        <strong>Thông Báo:</strong> @TempData["AltertMessage"]
+                    </div>
+                }
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th class="aa">
+                            ID Lương
+                        </th>
+                        <th class="aa">
+                            Số Lương
+                        </th>
+
+                        <th class="aa">Chức Năng</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.IDLuong)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.SoLuong)
+                            </td>
+
+                            <td class="aaa">
+
+
+                                <button type="button" class="btt btn-success"><i class="fa-solid fa-pen-to-square"></i> @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.IDLuong })  </button>
+
+                                <button type="button" class="btt btn-success"><i class="fa-solid fa-trash"></i>  @Html.ActionLink("Xóa", "Delete", new { id = item.IDLuong })</button>
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+
+
+

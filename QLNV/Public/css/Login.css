@@ -1,0 +1,136 @@
+﻿body {
+}
+
+.form-group {
+    color: red;
+    height: 50px;
+    margin-left: 35%;
+    width: 30%;
+    background-color: aliceblue;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 2px solid #ff656c;
+    border-left: 2px solid #ff656c;
+    border-right: 2px solid #ff656c;
+    border-bottom: 2px solid #ff656c;
+    font-weight: bold;
+}
+
+.form-groupp {
+    font-size:30px;
+    color: red;
+    height: 50px;
+    margin-left: 35%;
+    width: 30%;
+    background-color: aliceblue;
+    padding-top: 10px;
+    text-align: center;
+    border-top: 2px solid #ff656c;
+    border-left: 2px solid #ff656c;
+    border-right: 2px solid #ff656c;
+    border-bottom: 2px solid #ff656c;
+    font-weight: bold;
+}
+
+
+h2 {
+    background-color: lightblue;
+    margin-left: 35%;
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+    width: 30%;
+    border: 2px solid #ff656c;
+    border-radius: 5px;
+    color: red;
+    text-align: center;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+.form-horizontal {
+    padding-top: 100px;
+    height: 600px;
+    background: url('https://imgt.taimienphi.vn/cf/Images/np/2022/7/25/hinh-nen-4k-background-4k-dep-nhat-10.jpg') no-repeat fixed center center;
+    background-size: cover;
+    font-family: Montserrat;
+}
+
+.btn {
+    margin-top: 10px;
+    background-color: #e6ff65;
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    .btn:hover {
+        background-color: #e15960;
+    }
+
+    .btn a {
+        text-decoration: none;
+    }
+
+.btt {
+    margin-top: 10px;
+    background-color: #e6ff65;
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+    .btt:hover {
+        background-color: #e15960;
+    }
+
+    .btt a {
+        color: blue;
+        text-decoration: none;
+    }
+
+.form-groupp {
+    height: 80px;
+}
+
+@media(min-width:1280px) {
+    .form-group {
+        font-size: 50px;
+        height: 150px;
+    }
+
+    .form-groupp {
+        font-size: 35px;
+        height: 150px;
+    }
+
+    .form-horizontal {
+        height: 1024px;
+    }
+
+    input {
+        font-size: 30px;
+        width: 80%;
+        height: 60px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        font-size: 28px;
+        height: 50px;
+        width: 50%;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+
+    strong {
+        font-size: 25px;
+    }
+    span{
+        font-size:10px;
+    }
+}

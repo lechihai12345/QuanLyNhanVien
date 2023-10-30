@@ -1,0 +1,64 @@
+﻿@model QLNV.Model.ADM
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+    <link href="~/Public/css/Login.css" rel="stylesheet" />
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h2>ĐĂNG NHẬP Admin</h2>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    <div class="form-group">
+
+        @Html.LabelFor(model => model.TenDN, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenDN, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    
+
+    
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pass, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Pass, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Pass, "", new { @class = "text-danger" })
+        </div>
+
+    </div>
+
+    <div class="form-groupp">
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-success">
+                 @TempData["Error"]
+            </div>
+        }
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="ĐĂNG NHẬP" class="btn btn-default" />
+
+        </div>
+    </div>
+    <!--
+        <div class="form-group">
+            <div class="col-1">
+                <button type="button" class="btt btn-default"> @Html.ActionLink("ĐĂNG KÝ", "Create", "ADMs") </button>
+            </div>
+        </div>
+        -->
+    </div>
+    }
+
+

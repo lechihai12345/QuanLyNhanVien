@@ -1,0 +1,148 @@
+﻿@model IEnumerable<QLNV.Model.ADM>
+
+@{
+    Layout = null;
+}
+
+
+
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="~/Public/plugins/fontawesome-free/css/all.min.css" rel="stylesheet" />
+    <link href="~/Public/dist/css/adminlte.min.css" rel="stylesheet" />
+    <link href="~/Public/css/LayoutAdmin.css" rel="stylesheet" />
+    <link href="~/Content/all.css" rel="stylesheet" />
+</head>
+
+<style>
+    td {
+        font-weight:bold;
+        width: 20%;
+        text-align: center;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    .btt a {
+        font-size: 20px;
+        color: blue;
+        font-weight: bold;
+    }
+
+    .aa {
+        color: blue;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .aaa {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .col-md-6 {
+        font-weight: bold;
+        font-size: 20px;
+        color: blue;
+    }
+    .card {
+        background-color: lightblue;
+    }
+
+    .fa-pen-to-square {
+        color: black
+    }
+
+    .fa-circle-info {
+        color: black
+    }
+
+    .fa-trash {
+        color: black
+    }
+
+    .fa-folder-plus {
+        color: black
+    }
+
+    .btt a {
+        text-decoration: none;
+    }
+</style>
+<!-- Content Wrapper. Contains page content -->
+
+    <!-- Main content -->
+    <section class="content my-2">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <div class=" row">
+                    <div class=" col-md-6">
+                        <strong>QUẢN LÝ ADMIN</strong>
+                    </div>
+                </div>
+                </div>
+
+                <div class="card-body">
+                    @if (TempData["AltertMessage"] != null)
+                    {
+                        <div class="alert alert-success">
+                            <strong>Thông Báo:</strong> @TempData["AltertMessage"]
+                        </div>
+                    }
+
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="aa">
+                                Tên Đăng Nhập
+                            </th>
+                            <th class="aa">
+                                Mật Khẩu
+                            </th>
+                            <th class="aa"> Chức Năng</th>
+
+
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TenDN)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Pass)
+                                </td>
+
+                                <td class="aaa">
+                                    <button type="button" class="btt btn-success"><i class="fa-solid fa-pen-to-square"></i>  @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.IDadm })  </button>
+                                    <button type="button" class="btt btn-success"><i class="fa-solid fa-trash"></i>  @Html.ActionLink("Xóa", "Delete", new { id = item.IDadm })</button>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+
+<script src="~/Public/plugins/jquery/jquery.min.js"></script>
+<script src="~/Public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="~/Public/dist/js/adminlte.min.js"></script>
+<script src="~/Public/dist/js/demo.js"></script>
+@Scripts.Render("~/bundles/jquery")
+
+

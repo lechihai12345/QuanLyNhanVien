@@ -1,0 +1,146 @@
+﻿@model IEnumerable<QLNV.Model.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <link href="~/Public/css/NhanVien.css" rel="stylesheet" />
+}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content my-2">
+
+        <!-- Default box -->
+        <Kdiv class="card">
+            <div class="card-header">
+                <div class=" row">
+                    <div class=" col-md-6">
+                        <strong>QUẢN LÝ NHÂN VIÊN</strong>
+                    </div>
+                    <div class=" col-md-6 text-right">
+                        <button type="button" class="btt btn-success"><i class="fa-solid fa-folder-plus"></i>  @Html.ActionLink("TẠO NHÂN VIÊN", "Create")</button>
+                    </div>
+                </div>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+             
+
+            </div>
+            <div class="card-body">
+                @if (TempData["AltertMessage"] != null)
+                {
+                  <div class="alert alert-success">
+                  <strong>Thông Báo:</strong> @TempData["AltertMessage"]
+                  </div>
+                }
+
+                <table class="table table-bordered">
+                    <tr>
+
+                        <th class="aa">
+                            HỌ TÊN
+                        </th>
+                        <th class="aa">
+                            GIỚI TÍNH
+                        </th>
+                        <th class="aa">
+                            EMAIL
+                        </th>
+                        <th class="aa">
+                            SỐ CMND
+                        </th>
+                        <th class="aa">
+                            SỐ ĐIỆN THOẠI
+                        </th>
+                        <th class="aa">
+                            ĐỊA CHỈ
+                        </th>
+
+                        <th class="aa">
+                            CHỨC VỤ
+                        </th>
+                        <th class="aa">
+                            TÊN HỢP ĐỒNG
+                        </th>
+                        <th class="aa">
+                            KHU LÀM
+                        </th>
+
+                        <th class="aa">
+                            BẰNG CẤP
+                        </th>
+                        <th class="aa">
+                            LƯƠNG
+                        </th>
+                        <th class="aa">Chức Năng</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.HoTen)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.GioiTinh)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.SoCMND)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.SoDienThoai)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.DiaChi)
+                            </td>
+
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.ChucVu.TenChucVu)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.HopDong.TenHopDong)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.KhuLam.TenKhu)
+                            </td>
+
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.BangCap)
+                            </td>
+                            <td class="aaa">
+                                @Html.DisplayFor(modelItem => item.Luong.SoLuong)
+                            </td>
+                            <td class="aaa">
+
+
+
+                                <button type="button" class="btt btn-success"><i class="fa-solid fa-pen-to-square"></i> @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = item.ID })  </button>
+                                <button type="button" class="btt btn-success"><i class="fa-solid fa-circle-info"></i>@Html.ActionLink("Chi Tiết", "Details", new { id = item.ID }) </button>
+                                <button type="button" class="btt btn-success"><i class="fa-solid fa-trash"></i> @Html.ActionLink("Xóa", "Delete", new { id = item.ID })</button>
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </Kdiv>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+</div>
+
